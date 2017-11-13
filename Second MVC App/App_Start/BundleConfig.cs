@@ -24,7 +24,7 @@ namespace Second_MVC_App
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-sandstone.min.css",
                       "~/Content/site.css"));
         }
     }
