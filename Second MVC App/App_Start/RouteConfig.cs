@@ -16,13 +16,11 @@ namespace Second_MVC_App
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                "Albums by Release Date",
-                "albums/released/{year}/{month}",
-                new {controller = "Albums", action = "ByReleaseDate"},
-                new {year = @"\d{4}", month = @"\d{2}"}
-               );
-                
-
+                "Custom",
+                "{controller}/{Artist}",
+                new { controller = "Home", action = "Index", Artist = UrlParameter.Optional} 
+                );
+             
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

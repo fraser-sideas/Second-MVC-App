@@ -1,0 +1,34 @@
+﻿@using Second_MVC_App.Models
+@model IEnumerable<Second_MVC_App.Models.Album>
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3>See the current @Model.Count() Albums in our Database</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Rating</th>
+                <th>Length</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var album in Model)
+                {
+                    <tr>
+                        <td>@album.Name</td>
+                        <td>@Html.ActionLink(@album.Artist, "", "Home")</td>
+                        <td>@album.Rating</td>
+                        <td>@album.Length</td>
+                    </tr>
+                }
+        </tbody>
+
+
+    </table>
+</div>
