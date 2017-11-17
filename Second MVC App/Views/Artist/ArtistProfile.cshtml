@@ -1,0 +1,24 @@
+﻿@using Second_MVC_App.Models
+@model Second_MVC_App.Models.Artist
+@{
+    ViewBag.Title = "ArtistProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model.Name</h2>
+
+<div class="container">
+    <div class="row">
+        <div class='crop col-xs-12 col-sm-6 col-md-6 '>
+            <img class="col-xs-12 col-sm-6 col-md-6" src='@Model.Image' />
+        </div>
+    </div>
+</div>
+
+<ul class="products">
+    <li class="crop">
+        <img src="@Model.Image" alt="iPod" />
+    </li>
+</ul>
+

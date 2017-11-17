@@ -1,4 +1,5 @@
-﻿@model Second_MVC_App.Models.Artist
+﻿@using Second_MVC_App.Models
+@model IEnumerable<Second_MVC_App.Models.Artist>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,9 +7,26 @@
 
 
 
-<h2>@Model.Name</h2>
+<div class="container">
+    <h3>See the current @Model.Count() Albums in our Database</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Formed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Artist in Model)
+            {
+                <tr>
+                    <td><a href="Artist/@Artist.Name">@Artist.Name</a></td>
+                    <td>@Artist.Formed</td>
+                </tr>
 
-<img src="@Model.Image"/>
+            }
+        </tbody>
 
 
-
+    </table>
+</div>

@@ -22,7 +22,7 @@
                 {
                     <tr>
                         <td>@album.Name</td>
-                        <td>@Html.ActionLink(@album.Artist, "", "Home")</td>
+                        <td><a href="../Artist/@album.Artist">@album.Artist</a></td>
                         <td>@album.Rating</td>
                         <td>@album.Length</td>
                     </tr>

@@ -12,7 +12,7 @@ namespace Second_MVC_App.Controllers
     public class AlbumsController : Controller
     {
         // GET: Albums
-        public ActionResult Index(string new_Artist)
+        public ActionResult Index()
         {
             var model = AlbumsDatabase;
 
@@ -63,7 +63,7 @@ namespace Second_MVC_App.Controllers
                 Name = "Only the Night",
                 Rating = 8,
                 Length = 50,
-                Artist = "King of Leon"
+                Artist = "Kings of Leon"
             },
 
             new Album

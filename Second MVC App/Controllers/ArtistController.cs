@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Second_MVC_App.Models;
 
 namespace Second_MVC_App.Controllers
@@ -11,13 +12,15 @@ namespace Second_MVC_App.Controllers
     public class ArtistController : Controller
     {
         // GET: Artist
-        public ActionResult Index(string Artist)
+        public ActionResult Index(string artist)
         {
+            var singleArtist = ArtistDatabase.Find(p => p.Name == artist);
+            if (singleArtist == null)
+            {
+                return View(ArtistDatabase);
+            }
 
-            if 
-            var model = ArtistDatabase.Find(p => p.Name == Artist);
-                
-            return View(model);
+            return View("ArtistProfile", singleArtist);
         }
 
         static List<Artist> ArtistDatabase = new List<Artist>

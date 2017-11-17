@@ -17,8 +17,8 @@ namespace Second_MVC_App
 
             routes.MapRoute(
                 "Custom",
-                "{controller}/{Artist}",
-                new { controller = "Home", action = "Index", Artist = UrlParameter.Optional} 
+                "{controller}/{artist}",
+                new { controller = "Home", action = "Index", artist = ""} 
                 );
              
             routes.MapRoute(
